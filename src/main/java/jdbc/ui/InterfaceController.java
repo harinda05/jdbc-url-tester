@@ -15,6 +15,12 @@ public class InterfaceController {
     private TextField jdbcUrl;
 	
 	@FXML
+    private TextField username;
+	
+	@FXML
+    private TextField password;
+	
+	@FXML
     private TextArea log;
 	
 	@FXML
@@ -25,5 +31,7 @@ public class InterfaceController {
 	
 	@FXML
 	private Label statuslbl;
+	
+	
 	
 }
