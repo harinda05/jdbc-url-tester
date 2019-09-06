@@ -35,25 +35,24 @@ public class Tester {
 		
 		switch (dbtype) {
 		case "MySQL":
-			dbdriver = "com.mysql.jdbc.Driver";
+			return "com.mysql.cj.jdbc.Driver";
 		case "Oracle":
-			dbdriver = "oracle.jdbc.driver.OracleDriver";	
+			return "oracle.jdbc.driver.OracleDriver";	
 		case "DB2":
-			dbdriver = "com.ibm.db2.jdbc.app.DB2Driver";	
+			return "com.ibm.db2.jdbc.app.DB2Driver";	
 		case "Sybase":
-			dbdriver = "com.sybase.jdbc.SybDriver";	
+			return "com.sybase.jdbc.SybDriver";	
 		case "Teradata":
-			dbdriver = "com.teradata.jdbc.TeraDriver";	
+			return "com.teradata.jdbc.TeraDriver";	
 		case "Microsoft SQL Server":
-			dbdriver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";	
+			return  "com.microsoft.sqlserver.jdbc.SQLServerDriver";	
 		case "PostgreSQL":
-			dbdriver = "org.postgresql.Driver";	
+			return "org.postgresql.Driver";	
 		
 		default :
-			dbdriver = "Error in dbtype";
+			return  "Error in dbtype";
 		}
 		
-		return dbdriver;
 	}
 	
 }
