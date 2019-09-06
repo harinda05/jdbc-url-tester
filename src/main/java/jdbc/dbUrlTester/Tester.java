@@ -4,22 +4,35 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import jdbc.ui.InterfaceController;
+
+
 public class Tester {
-	
+
+	private static InterfaceController controller ;
+
+    public void setController(InterfaceController controller) {
+        this.controller = controller ;
+    }
+    
 	public static String newDbConnection(String dbhost, String username, String password, String dbtype) {
 		String metadata = null;
 		
-		 try {
+		/* try {
 	            Class.forName(getdbdriver(dbtype));
-	            System.out.println("jdbc driver loaded successfully");
+	            controller.appendLog("jdbc driver loaded successfully");
 	        }
 	        catch (ClassNotFoundException e) {
-	            System.out.println("jdbc driver loading failed");
-	            return(e.getMessage());
+	        	controller.appendLog("jdbc driver loading failed");
+	        	controller.appendLog(e.getMessage());
+	            return null;
 	        }
-		
+		*/
 		try (Connection conn = DriverManager.getConnection(
-				dbhost, username, password)	){	
+				dbhost, username, password)	){
+			if(conn != null){
+				controller.appendLog("JDBC Connection successful");
+			}
 			metadata = conn.getMetaData().toString();
 		} catch (SQLException e) {
 			System.out.println("Cannot create database connection");

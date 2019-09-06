@@ -41,16 +41,20 @@ public class InterfaceController implements Initializable {
 	
 	@FXML
 	public void checkbtnaction(ActionEvent event) {
-	
-		String result = Tester.newDbConnection(jdbcUrl.getText(), username.getText(), password.getText(), dblist.getSelectionModel().getSelectedItem().toString());
+		appendLog("Checking new jdbc connection...");
+		String result = Tester.newDbConnection(jdbcUrl.getText(), username.getText(), password.getText(), dblist.getSelectionModel().getSelectedItem().toString());	
 		System.out.println(result);
 	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		
+		 Tester config = new Tester();
+		 config.setController(this);		
 	}
 	
+	public void appendLog(String text){
+        System.out.println("FXMLDocumentController.setLabelText(): Called");
+        log.appendText(text+System.lineSeparator());
+    }
 	
 }
