@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
@@ -25,7 +26,7 @@ public class InterfaceController implements Initializable {
     private TextField username;
 	
 	@FXML
-    private TextField password;
+    private PasswordField password;
 	
 	@FXML
     private TextArea log;
