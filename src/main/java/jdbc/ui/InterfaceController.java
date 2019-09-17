@@ -34,15 +34,12 @@ public class InterfaceController implements Initializable {
     private Button checkBtn;
 	
 	@FXML
-	private ComboBox dblist;
-	
-	@FXML
 	private static Label statuslbl;
 	
 	@FXML
 	public void checkbtnaction(ActionEvent event) {
 		appendLog("Checking new jdbc connection...");
-		String result = Tester.newDbConnection(jdbcUrl.getText(), username.getText(), password.getText(), dblist.getSelectionModel().getSelectedItem().toString());	
+		String result = Tester.newDbConnection(jdbcUrl.getText(), username.getText(), password.getText());	
 		System.out.println(result);
 	}
 

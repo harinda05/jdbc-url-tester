@@ -15,34 +15,32 @@ public class Tester {
         this.controller = controller ;
     }
     
-	public static String newDbConnection(String dbhost, String username, String password, String dbtype) {
+	public static String newDbConnection(String dbhost, String username, String password) {
 		String metadata = null;
 		
-		/* try {
-	            Class.forName(getdbdriver(dbtype));
-	            controller.appendLog("jdbc driver loaded successfully");
-	        }
-	        catch (ClassNotFoundException e) {
-	        	controller.appendLog("jdbc driver loading failed");
-	        	controller.appendLog(e.getMessage());
-	            return null;
-	        }
-		*/
-		try (Connection conn = DriverManager.getConnection(
-				dbhost, username, password)	){
-			if(conn != null){
-				controller.appendLog("JDBC Connection successful");
+		if (dbhost.isEmpty()){
+			controller.appendLog("Empty jdbc URL");
+		} if (username.isEmpty()){
+			controller.appendLog("Empty username");
+		} else{
+			try (Connection conn = DriverManager.getConnection(
+					dbhost, username, password)	){
+				if(conn != null){
+					controller.appendLog("JDBC Connection successful");
+				}
+				metadata = conn.getMetaData().toString();
+			} catch (SQLException e) {
+				System.out.println("Cannot create database connection");
+				e.printStackTrace();
 			}
-			metadata = conn.getMetaData().toString();
-		} catch (SQLException e) {
-			System.out.println("Cannot create database connection");
-			e.printStackTrace();
-		}
+			
+		} 
+			
 		return metadata;
 	}
 	
 	
-	private static String getdbdriver(String dbtype) {
+	/*private static String getdbdriver(String dbtype) {
 		
 		String dbdriver = null;
 		
@@ -66,6 +64,6 @@ public class Tester {
 			return  "Error in dbtype";
 		}
 		
-	}
+	}*/
 	
 }
