@@ -28,12 +28,14 @@ public class Tester {
 				if(conn != null){
 					controller.appendLog("JDBC Connection successful");
 				}
-				metadata = conn.getMetaData().toString();
+				metadata = conn.getMetaData().getSchemas().toString();
 			} catch (SQLException e) {
 				System.out.println("Cannot create database connection");
-				e.printStackTrace();
-			}
-			
+				//e.printStackTrace();
+				
+				controller.appendLog(e.getMessage());
+				}
+
 		} 
 			
 		return metadata;

@@ -6,16 +6,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="547.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jdbc.ui.InterfaceController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="461.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jdbc.ui.InterfaceController">
    <children>
       <TextField fx:id="jdbcUrl" layoutX="162.0" layoutY="54.0" prefHeight="35.0" prefWidth="395.0" />
       <Label layoutX="57.0" layoutY="54.0" prefHeight="35.0" prefWidth="53.0" text="JDBC URL" />
       <Button fx:id="checkBtn" layoutX="392.0" layoutY="134.0" mnemonicParsing="false" onAction="#checkbtnaction" prefHeight="35.0" prefWidth="165.0" text="Check Connection" />
-      <Pane layoutX="57.0" layoutY="217.0" prefHeight="229.0" prefWidth="526.0">
+      <Pane layoutX="38.0" layoutY="216.0" prefHeight="229.0" prefWidth="526.0">
          <children>
             <TextArea fx:id="log" layoutX="14.0" layoutY="62.0" prefHeight="115.0" prefWidth="499.0" />
             <Label layoutX="18.0" layoutY="16.0" prefHeight="35.0" prefWidth="42.0" text="Status" />
-            <Label fx:id="statuslbl" layoutX="103.0" layoutY="16.0" prefHeight="35.0" prefWidth="395.0" />
+            <Label fx:id="statuslbl" layoutX="121.0" layoutY="16.0" prefHeight="35.0" prefWidth="89.0" text="Idle" />
          </children>
       </Pane>
       <Label layoutX="57.0" layoutY="111.0" prefHeight="35.0" prefWidth="62.0" text="Username" />

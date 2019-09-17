@@ -34,13 +34,16 @@ public class InterfaceController implements Initializable {
     private Button checkBtn;
 	
 	@FXML
-	private static Label statuslbl;
+	private Label statuslbl;
 	
 	@FXML
 	public void checkbtnaction(ActionEvent event) {
+		
+		log.clear();
 		appendLog("Checking new jdbc connection...");
 		String result = Tester.newDbConnection(jdbcUrl.getText(), username.getText(), password.getText());	
 		System.out.println(result);
+		
 	}
 
 	@Override
