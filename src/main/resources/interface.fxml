@@ -15,8 +15,7 @@
       <Pane layoutX="38.0" layoutY="216.0" prefHeight="229.0" prefWidth="526.0">
          <children>
             <TextArea fx:id="log" layoutX="14.0" layoutY="62.0" prefHeight="115.0" prefWidth="499.0" />
-            <Label layoutX="18.0" layoutY="16.0" prefHeight="35.0" prefWidth="42.0" text="Status" />
-            <Label fx:id="statuslbl" layoutX="121.0" layoutY="16.0" prefHeight="35.0" prefWidth="89.0" text="Idle" />
+            <Label layoutX="18.0" layoutY="16.0" prefHeight="35.0" prefWidth="42.0" text="Log" />
          </children>
       </Pane>
       <Label layoutX="57.0" layoutY="111.0" prefHeight="35.0" prefWidth="62.0" text="Username" />

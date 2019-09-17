@@ -33,17 +33,17 @@ public class InterfaceController implements Initializable {
 	
 	@FXML
     private Button checkBtn;
-	
-	@FXML
-	private Label statuslbl;
+
 	
 	@FXML
 	public void checkbtnaction(ActionEvent event) {
 		
 		log.clear();
-		appendLog("Checking new jdbc connection...");
-		String result = Tester.newDbConnection(jdbcUrl.getText(), username.getText(), password.getText());	
-		System.out.println(result);
+		
+		this.appendLog("trying jdbc connection ...");
+		new Thread(() -> {
+			Tester.newDbConnection(jdbcUrl.getText(), username.getText(), password.getText());
+		}).start();
 		
 	}
 
